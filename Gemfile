@@ -3,6 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 
+gem "sassc-rails"
+gem 'bootstrap', '~> 5.1.3'
+
+# gem 'webpacker', '~> 0.1'
+
 gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.5'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -73,3 +78,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "webpacker", "~> 5.4"

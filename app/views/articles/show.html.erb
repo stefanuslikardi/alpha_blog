@@ -1,6 +1,21 @@
-<h1>Showing article details</h1>
+<div class="text-center mt-5">
+    <h1>Article details</h1>
+</div>
 
-<p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
+<div class="card custom-card text-center h-50 my-5 shadow">
+    <div class="card-header">
+        by @person
+    </div>
+    <div class="card-body">
+        <h5 class="card-title text-primary fw-bolder fs-1 mb-3"><%= @article.title %></h5>
+        <p class="card-text text-start"><%= @article.description %></p>
+    </div>
+    <div class="card-footer text-muted">
+        <small>Created <%= @article.created_at %> ago</small>
+        <small>Edited <%= @article.updated_at %> ago</small>
+    </div>
+</div>
 
-<%= link_to 'Return to articles listing', articles_path %>
+<div class="mb-5 text-center">
+    <%= link_to '[Return to articles listing]', articles_path %>
+</div>

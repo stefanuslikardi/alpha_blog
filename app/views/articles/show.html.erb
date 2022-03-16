@@ -4,7 +4,9 @@
 
 <div class="card custom-card text-center h-50 my-5 shadow">
     <div class="card-header">
-        by @person
+        by <%= @article.user.username %>
+        <br>
+        <%= @article.user.email %>
     </div>
     <div class="card-body">
         <h5 class="card-title text-primary fw-bolder fs-1 mb-3"><%= @article.title %></h5>

@@ -1,16 +1,20 @@
-<div class="text-center mt-5">
+<div class="text-center mt-5 text-light">
     <h1>Article details</h1>
 </div>
 
 <div class="card custom-card text-center h-50 my-5 shadow">
-    <div class="card-header">
-        by <%= @article.user.username %>
-        <br>
-        <%= @article.user.email %>
+    <div class="card-header font-italic">
+        by <%= @article.user.username if @article.user %>
+        <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
     </div>
     <div class="card-body">
-        <h5 class="card-title text-primary fw-bolder fs-1 mb-3"><%= @article.title %></h5>
-        <p class="card-text text-start"><%= @article.description %></p>
+        <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+        <div class="choose-btn d-flex justify-content-center">
+            <% if logged_in? && @article.user == current_user %>
+                <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %>
+                <%= button_to "Delete", article_path(@article), class: "btn btn-outline-danger", data: { turbo_confirm: 'message' }, method: :delete %>
+            <% end %>
+        </div>
     </div>
     <div class="card-footer text-muted">
         <small>Created <%= @article.created_at %> ago</small>

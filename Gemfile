@@ -5,6 +5,7 @@ ruby "3.1.1"
 
 gem "sassc-rails"
 gem 'bootstrap', '~> 5.1.3'
+gem 'will_paginate', '~> 3.3'
 
 # gem 'webpacker', '~> 0.1'
 
@@ -26,7 +27,7 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails", "~> 1.0"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"

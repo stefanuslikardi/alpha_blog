@@ -10,7 +10,7 @@
     <div class="card-body">
         <div class="card-text text-left"><%= simple_format(@article.description) %></div>
         <div class="choose-btn d-flex justify-content-center">
-            <% if logged_in? && @article.user == current_user %>
+            <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
                 <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %>
                 <%= button_to "Delete", article_path(@article), class: "btn btn-outline-danger", data: { turbo_confirm: 'message' }, method: :delete %>
             <% end %>

@@ -32,6 +32,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery_ujs
 
 console.log('Hello World from Webpacker')
 
